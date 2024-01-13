@@ -188,12 +188,12 @@ dplyr::tbl(con, "employees") |>
 
 # Top 10 highest paid employees
 dplyr::tbl(con, "employees") |>
-  select(employee_id, first_name, last_name, salary) %>%
+  select(employee_id, first_name, last_name, salary) |>
   arrange(desc(salary)) |> 
   head(10)
 
 dplyr::tbl(con, "employees") |>
-  select(employee_id, first_name, last_name, salary) %>%
+  select(employee_id, first_name, last_name, salary) |>
   arrange(desc(salary)) |> 
   head(10) |> show_query()
 
@@ -305,6 +305,6 @@ dplyr::tbl(con, "employees") |>
   mutate(
     full_name = paste(first_name, last_name, sep = ' '),
     less_than_50k = salary < 50000
-  ) %>%
+  ) |>
   select(full_name, less_than_50k)
 
